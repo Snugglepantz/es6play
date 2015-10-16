@@ -1,0 +1,48 @@
+{
+  "name": "es6play",
+  "version": "0.0.1",
+  "description": "fork of seed project for systemjs and angular",
+  "author": "Snugglepantz",
+  "devDependencies": {
+    "babel": "^5.2.17",
+    "gulp": "^3.8.11",
+    "gulp-helpers": "^1.5.7",
+    "jspm": "^0.15.6"
+  },
+  "dependencies": {},
+  "jspm": {
+    "directories": {
+      "baseURL": "dist",
+      "lib": "src",
+      "packages": "jspm_packages"
+    },
+    "configFile": "system.config.js",
+    "dependencies": {
+      "angular": "github:angular/bower-angular@1.4.7",
+      "angular-animate": "npm:angular-animate@1.4.7",
+      "angular-decorators": "npm:angular-decorators@^1.1.0",
+      "angular-local-storage": "npm:angular-local-storage@0.2.2",
+      "angular-messages": "npm:angular-messages@1.4.7",
+      "angular-mocks": "npm:angular-mocks@1.4.7",
+      "angular-sanitize": "npm:angular-sanitize@1.4.7",
+      "angular-ui": "github:angular-ui/bootstrap-bower@0.13.4",
+      "angular-ui-router": "github:angular-ui/ui-router@0.2.15",
+      "bootstrap-css-only": "github:fyockm/bootstrap-css-only@3.3.5",
+      "css": "github:systemjs/plugin-css@0.1.16",
+      "font-awesome": "npm:font-awesome@4.4.0",
+      "json": "github:systemjs/plugin-json@0.1.0",
+      "lookfirst/oclazyload-systemjs-router": "github:lookfirst/oclazyload-systemjs-router@^1.2.2",
+      "text": "github:systemjs/plugin-text@0.0.2",
+      "todomvc-app-css": "github:tastejs/todomvc-app-css@^1.0.3",
+      "todomvc-common": "github:tastejs/todomvc-common@^1.0.2"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.1.13",
+      "babel-runtime": "npm:babel-runtime@^5.1.13",
+      "core-js": "npm:core-js@^0.9.4"
+    }
+  },
+  "scripts": {
+    "postinstall": "jspm install && jspm dl-loader"
+  }
+}
