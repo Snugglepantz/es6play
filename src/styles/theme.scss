@@ -1,0 +1,13 @@
+@import '../../jspm_packages/npm/materialize-css@0.97.1/sass/components/color';
+@import 'variables/_materialize.scss';
+@import '../../jspm_packages/npm/materialize-css@0.97.1/sass/materialize.scss';
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}

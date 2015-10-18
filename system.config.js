@@ -17,9 +17,11 @@ System.config({
 
 System.config({
   "map": {
+    "Dogfalo/materialize": "github:Dogfalo/materialize@0.97.0",
     "angular": "github:angular/bower-angular@1.4.7",
     "angular-animate": "npm:angular-animate@1.4.7",
     "angular-local-storage": "npm:angular-local-storage@0.2.2",
+    "angular-materialize": "github:krescruz/angular-materialize@master",
     "angular-messages": "npm:angular-messages@1.4.7",
     "angular-mocks": "npm:angular-mocks@1.4.7",
     "angular-sanitize": "npm:angular-sanitize@1.4.7",
@@ -30,8 +32,14 @@ System.config({
     "css": "github:systemjs/plugin-css@0.1.16",
     "font-awesome": "npm:font-awesome@4.4.0",
     "json": "github:systemjs/plugin-json@0.1.0",
+    "krescruz/angular-materialize": "github:krescruz/angular-materialize@master",
+    "materialize-css": "npm:materialize-css@0.97.1",
     "oclazyload-systemjs-router": "github:lookfirst/oclazyload-systemjs-router@1.2.2",
     "text": "github:systemjs/plugin-text@0.0.2",
+    "github:Dogfalo/materialize@0.97.0": {
+      "css": "github:systemjs/plugin-css@0.1.16",
+      "jquery": "github:components/jquery@2.1.4"
+    },
     "github:angular-ui/ui-router@0.2.15": {
       "angular": "github:angular/bower-angular@1.4.7"
     },
@@ -69,6 +77,10 @@ System.config({
     },
     "npm:inherits@2.0.1": {
       "util": "github:jspm/nodelibs-util@0.1.0"
+    },
+    "npm:materialize-css@0.97.1": {
+      "fs": "github:jspm/nodelibs-fs@0.1.2",
+      "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:process@0.11.2": {
       "assert": "github:jspm/nodelibs-assert@0.1.0"

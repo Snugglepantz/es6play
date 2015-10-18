@@ -5,6 +5,8 @@ import angular from 'angular';
 import 'angular-animate';
 import 'angular-sanitize';
 import 'angular-messages';
+import 'angular-materialize';
+import '../styles/theme.css!';
 
 // js app files
 //import './routes/home/home';

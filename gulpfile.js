@@ -12,8 +12,11 @@ var path = {
   templates: ['src/**/*.tpl.html', '!src/index.tpl.html'],
   js: 'src/**/*.js',
   routes: './src/app/routes.json',
-  sass: ['src/styles/**/*.scss'],
+  sass: ['src/styles/theme.scss'],
+  sassOutput: 'dist/styles/',
   assets: ['./src/**/*.css', './src/**/*.svg', './src/**/*.woff', './src/**/*.ttf', './src/**/*.png', './src/**/*.ico', './src/**/*.gif', './src/**/*.jpg', './src/**/*.eot'],
+  fonts: ['./jspm_packages/npm/materialize-css@0.97.1/dist/font/**/*'],
+  fontsOutput: 'dist/font/',
   json: './src/**/*.json',
   systemConfig: './system.config.js',
   watch: './src/**',
@@ -73,13 +76,14 @@ var babelCompilerOptions = {
 
 taskMaker.defineTask('clean', {taskName: 'clean', src: path.output});
 
-taskMaker.defineTask('sass', {taskName: 'sass', src: path.sass, dest: path.output});
+taskMaker.defineTask('sass', {taskName: 'sass', src: path.sass, dest: path.sassOutput});
 
 taskMaker.defineTask('jshint', {taskName: 'lint', src: path.js});
 taskMaker.defineTask('babel', {taskName: 'babel', src: path.js, dest: path.output, ngAnnotate: true, compilerOptions: babelCompilerOptions});
 taskMaker.defineTask('ngHtml2Js', {taskName: 'html', src: path.templates, dest: path.output, compilerOptions: babelCompilerOptions});
 
 taskMaker.defineTask('copy', {taskName: 'systemConfig', src: path.systemConfig, dest: path.output});
+taskMaker.defineTask('copy', {taskName: 'fonts', src: path.fonts, dest: path.fontsOutput});
 taskMaker.defineTask('copy', {taskName: 'index.html', src: path.index, dest: path.output, rename: 'index.html'});
 taskMaker.defineTask('copy', {taskName: 'cache-bust-index.html', src: path.index, dest: path.output, rename: 'index.html', replace: cacheBustConfig});
 
@@ -91,7 +95,7 @@ taskMaker.defineTask('browserSync', {taskName: 'serve', config: serverOptions, h
 
 
 gulp.task('compile', function(callback) {
-  return runSequence(['sass', 'html', 'babel'], callback);
+  return runSequence(['sass', 'fonts', 'html', 'babel'], callback);
 });
 
 gulp.task('recompile', function(callback) {

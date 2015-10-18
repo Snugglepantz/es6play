@@ -22,6 +22,7 @@
       "angular": "github:angular/bower-angular@1.4.7",
       "angular-animate": "npm:angular-animate@1.4.7",
       "angular-local-storage": "npm:angular-local-storage@0.2.2",
+      "angular-materialize": "github:krescruz/angular-materialize@master",
       "angular-messages": "npm:angular-messages@1.4.7",
       "angular-mocks": "npm:angular-mocks@1.4.7",
       "angular-sanitize": "npm:angular-sanitize@1.4.7",
@@ -29,6 +30,7 @@
       "css": "github:systemjs/plugin-css@0.1.16",
       "font-awesome": "npm:font-awesome@4.4.0",
       "json": "github:systemjs/plugin-json@0.1.0",
+      "materialize-css": "npm:materialize-css@^0.97.1",
       "text": "github:systemjs/plugin-text@0.0.2"
     },
     "devDependencies": {
