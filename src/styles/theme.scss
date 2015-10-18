@@ -1,6 +1,7 @@
-@import '../../jspm_packages/npm/materialize-css@0.97.1/sass/components/color';
-@import 'variables/_materialize.scss';
-@import '../../jspm_packages/npm/materialize-css@0.97.1/sass/materialize.scss';
+@import '../../jspm_packages/github/Dogfalo/materialize@0.97.0/sass/components/color';
+//@import './variables/_materialize';
+$primary-color: color("deep-orange", "darken-2");
+@import '../../jspm_packages/github/Dogfalo/materialize@0.97.0/sass/materialize';
 
 body {
   display: flex;

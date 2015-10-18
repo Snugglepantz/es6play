@@ -15,7 +15,7 @@ var path = {
   sass: ['src/styles/theme.scss'],
   sassOutput: 'dist/styles/',
   assets: ['./src/**/*.css', './src/**/*.svg', './src/**/*.woff', './src/**/*.ttf', './src/**/*.png', './src/**/*.ico', './src/**/*.gif', './src/**/*.jpg', './src/**/*.eot'],
-  fonts: ['./jspm_packages/npm/materialize-css@0.97.1/dist/font/**/*'],
+  fonts: ['./jspm_packages/github/Dogfalo/materialize@0.97.0/dist/font/**/*'],
   fontsOutput: 'dist/font/',
   json: './src/**/*.json',
   systemConfig: './system.config.js',
