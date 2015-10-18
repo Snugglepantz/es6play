@@ -22,9 +22,6 @@ var path = {
   minify: 'dist/**/*.js'
 };
 
-var routes = require(path.routes);
-var routesSrc = routes.map(function(r) { return r.src; });
-
 var serverOptions = {
   open: false,
   ui: false,
@@ -70,18 +67,6 @@ var cacheBustConfig = {
   ]
 };
 
-var routeBundleConfig = {
-  baseURL: path.output,
-  main: 'app/app',
-  routes: routesSrc,
-  bundleThreshold: 0.6,
-  config: path.systemConfig,
-  sourceMaps: true,
-  minify: false,
-  dest: 'dist/app',
-  destJs: 'dist/app/app.js'
-};
-
 var babelCompilerOptions = {
   modules: 'system'
 };
@@ -93,11 +78,8 @@ taskMaker.defineTask('sass', {taskName: 'sass', src: path.sass, dest: path.outpu
 taskMaker.defineTask('jshint', {taskName: 'lint', src: path.js});
 taskMaker.defineTask('babel', {taskName: 'babel', src: path.js, dest: path.output, ngAnnotate: true, compilerOptions: babelCompilerOptions});
 taskMaker.defineTask('ngHtml2Js', {taskName: 'html', src: path.templates, dest: path.output, compilerOptions: babelCompilerOptions});
-taskMaker.defineTask('routeBundler', {taskName: 'routeBundler', config: routeBundleConfig});
 
 taskMaker.defineTask('copy', {taskName: 'systemConfig', src: path.systemConfig, dest: path.output});
-taskMaker.defineTask('copy', {taskName: 'assets', src: path.assets, dest: path.output});
-taskMaker.defineTask('copy', {taskName: 'json', src: path.json, dest: path.output, changed: {extension: '.json'}});
 taskMaker.defineTask('copy', {taskName: 'index.html', src: path.index, dest: path.output, rename: 'index.html'});
 taskMaker.defineTask('copy', {taskName: 'cache-bust-index.html', src: path.index, dest: path.output, rename: 'index.html', replace: cacheBustConfig});
 
@@ -109,7 +91,7 @@ taskMaker.defineTask('browserSync', {taskName: 'serve', config: serverOptions, h
 
 
 gulp.task('compile', function(callback) {
-  return runSequence(['sass', 'html', 'babel', 'json', 'assets'], callback);
+  return runSequence(['sass', 'html', 'babel'], callback);
 });
 
 gulp.task('recompile', function(callback) {

@@ -10,7 +10,7 @@
 	<title>SystemJS • AngularJS • React</title>
 	<base href="/" />
 </head>
-<body ng-cloak>
+<body data-main-app ng-cloak>
 
 	<noscript>
 		<div class="deprecation-warning">
@@ -25,23 +25,8 @@
 	<script type="text/javascript" src="jspm_packages/system.js"></script>
 	<script type="text/javascript" src="system.config.js"></script>
 
-	<!-- PROD
 	<script type="text/javascript">
-		var systemLocate = System.locate;
-		System.locate = function(load) {
-		var System = this;
-		return Promise.resolve(systemLocate.call(this, load)).then(function(address) {
-			if(address.indexOf('bust') > -1 ||
-			address.indexOf('css') > -1 ||
-			address.indexOf('json') > -1) return address;
-			return address + System.cacheBust;
-		});
-		}
-		System.cacheBust = '?bust={{hash}}';
-	</script>
-	END -->
-
-	<script type="text/javascript">
+    System.baseURL = '/';
 		System.import('app/app');
 	</script>
 </body>

@@ -5,30 +5,24 @@ import angular from 'angular';
 import 'angular-animate';
 import 'angular-sanitize';
 import 'angular-messages';
-import 'angular-ui-router';
-import 'angular-ui/ui-bootstrap-tpls';
-import 'angular-local-storage';
 
-import router from 'oclazyload-systemjs-router';
-import futureRoutes from 'app/routes.json!';
+// js app files
+//import './routes/home/home';
 
-var appModule = angular.module('app', []);
+import {mainConfigModule} from 'app/config/config';
 
-appModule.config(router(appModule, futureRoutes));
+import {homeRouteModule} from 'app/routes/home/home';
 
-appModule.config(function($locationProvider, $httpProvider, $urlRouterProvider) {
-	$locationProvider.html5Mode({
-		enabled: true,
-		requireBase: false
-	});
-	$httpProvider.useApplyAsync(true);
-	return $urlRouterProvider.otherwise('/todo');
-});
+export var mainModule = angular.module('mainModule', [
+  'ngAnimate',
+  'ngSanitize',
+  'ngMessages',
+  mainConfigModule.name,
+  homeRouteModule.name
+]).run();
 
 angular.element(document).ready(function() {
-	return angular.bootstrap(document.body, [appModule.name], {
-		strictDi: true
-	});
+  angular.bootstrap(document, [mainModule.name], {
+    strictDi: true
+  });
 });
-
-export default appModule;
