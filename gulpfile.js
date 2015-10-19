@@ -12,7 +12,7 @@ var path = {
   templates: ['src/**/*.tpl.html', '!src/index.tpl.html'],
   js: 'src/**/*.js',
   routes: './src/app/routes.json',
-  sass: ['src/styles/theme.scss'],
+  sass: ['src/assets/styles/theme.scss'],
   sassOutput: 'dist/styles/',
   assets: ['./src/**/*.css', './src/**/*.svg', './src/**/*.woff', './src/**/*.ttf', './src/**/*.png', './src/**/*.ico', './src/**/*.gif', './src/**/*.jpg', './src/**/*.eot'],
   fonts: ['./jspm_packages/github/Dogfalo/materialize@0.97.0/dist/font/**/*'],
@@ -84,6 +84,7 @@ taskMaker.defineTask('ngHtml2Js', {taskName: 'html', src: path.templates, dest: 
 
 taskMaker.defineTask('copy', {taskName: 'systemConfig', src: path.systemConfig, dest: path.output});
 taskMaker.defineTask('copy', {taskName: 'fonts', src: path.fonts, dest: path.fontsOutput});
+taskMaker.defineTask('copy', {taskName: 'assets', src: 'src/assets/svg/*.*', dest: 'dist/assets/svg/'});
 taskMaker.defineTask('copy', {taskName: 'index.html', src: path.index, dest: path.output, rename: 'index.html'});
 taskMaker.defineTask('copy', {taskName: 'cache-bust-index.html', src: path.index, dest: path.output, rename: 'index.html', replace: cacheBustConfig});
 
@@ -95,7 +96,7 @@ taskMaker.defineTask('browserSync', {taskName: 'serve', config: serverOptions, h
 
 
 gulp.task('compile', function(callback) {
-  return runSequence(['sass', 'fonts', 'html', 'babel'], callback);
+  return runSequence(['sass', 'fonts', 'assets', 'html', 'babel'], callback);
 });
 
 gulp.task('recompile', function(callback) {

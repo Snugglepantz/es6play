@@ -21,6 +21,8 @@ System.config({
     "angular": "github:angular/bower-angular@1.4.7",
     "angular-animate": "npm:angular-animate@1.4.7",
     "angular-local-storage": "npm:angular-local-storage@0.2.2",
+    "angular-material": "github:angular/bower-material@0.11.4",
+    "angular-material-icons": "npm:angular-material-icons@0.6.0",
     "angular-materialize": "github:krescruz/angular-materialize@master",
     "angular-messages": "npm:angular-messages@1.4.7",
     "angular-mocks": "npm:angular-mocks@1.4.7",
@@ -45,6 +47,18 @@ System.config({
     "github:angular-ui/ui-router@0.2.15": {
       "angular": "github:angular/bower-angular@1.4.7"
     },
+    "github:angular/bower-angular-animate@1.4.7": {
+      "angular": "github:angular/bower-angular@1.4.7"
+    },
+    "github:angular/bower-angular-aria@1.4.7": {
+      "angular": "github:angular/bower-angular@1.4.7"
+    },
+    "github:angular/bower-material@0.11.4": {
+      "angular": "github:angular/bower-angular@1.4.7",
+      "angular-animate": "github:angular/bower-angular-animate@1.4.7",
+      "angular-aria": "github:angular/bower-angular-aria@1.4.7",
+      "css": "github:systemjs/plugin-css@0.1.16"
+    },
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"
     },
@@ -61,6 +75,12 @@ System.config({
       "ui-router-extras": "github:christopherthielen/ui-router-extras@0.0.13"
     },
     "npm:angular-animate@1.4.7": {
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
+    "npm:angular-material-icons@0.6.0": {
+      "angular": "npm:angular@1.5.0-beta.0"
+    },
+    "npm:angular@1.5.0-beta.0": {
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:assert@1.3.0": {

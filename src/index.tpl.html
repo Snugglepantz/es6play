@@ -1,73 +1,29 @@
 <!doctype html>
 <html lang="en" data-framework="angularjs">
 <head>
-  <meta charset="utf-8"/>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-  <meta name="apple-mobile-web-app-capable" content="yes"/>
-  <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
-  <meta name="viewport" content="width = device-width, minimal-ui, initial-scale = 1, user-scalable = no"/>
-  <meta name="apple-mobile-web-app-title" content="Demo App"/>
-  <title>SystemJS • AngularJS • React</title>
-
-  <!-- Materialize Fonts -->
-  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
   <base href="/"/>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+  <title>Angular Material - Starter App</title>
+  <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
+
+  <style type="text/css">
+    /**
+     * Hide when Angular is not yet loaded and initialized
+     */
+    [ng-cloak] {
+      display: none;
+    }
+  </style>
 </head>
-<body data-main-app ng-cloak>
+<body ng-cloak layout="column" data-main-app>
 
-<noscript>
-  <div class="deprecation-warning">
-    <h1>Please enable Javascript</h1>
-
-    <p>Demo requires your browser to have Javascript enabled.
-      <a href="http://enable-javascript.com" target="_blank">Learn more</a></p>
-  </div>
-</noscript>
-
-
-<header class="navbar-fixed">
-    <nav>
-      <div class="nav-wrapper container">
-        <a ui-sref="home.index" class="brand-logo">Logo</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="sass.html">Sass</a></li>
-          <li><a href="badges.html">Components</a></li>
-          <li><a href="collapsible.html">JavaScript</a></li>
-        </ul>
-      </div>
-    </nav>
-</header>
-
-<main class="container">
-  <ui-view class="content-area"></ui-view>
-</main>
-
-<footer class="page-footer">
-  <div class="container">
-    <div class="row">
-      <div class="col l6 s12">
-        <h5 class="white-text">Footer Content</h5>
-        <p class="grey-text text-lighten-4">You can use rows and columns here to</p>
-      </div>
-      <div class="col l4 offset-12 s12">
-        <h5 class="white-text">Links</h5>
-        <ul>
-          <li><a class="grey-text text-lighten-3" ui-sref="home.index">Link 1</a></li>
-          <li><a class="grey-text text-lighten-3" ui-sref="home.index">Link 2</a></li>
-          <li><a class="grey-text text-lighten-3" ui-sref="home.index">Link 3</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="footer-copyright">
-    <div class="container">
-      © 2016 Copyright Text
-      <a class="grey-text text-lighten-4 right" ui-sref="home.index">More Links</a>
-    </div>
-  </div>
-</footer>
-
+<site-layout></site-layout>
+<!--<ui-view></ui-view>-->
 <script type="text/javascript" src="jspm_packages/system.js"></script>
 <script type="text/javascript" src="system.config.js"></script>
 

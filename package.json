@@ -23,6 +23,8 @@
       "angular": "github:angular/bower-angular@1.4.7",
       "angular-animate": "npm:angular-animate@1.4.7",
       "angular-local-storage": "npm:angular-local-storage@0.2.2",
+      "angular-material": "github:angular/bower-material@^0.11.4",
+      "angular-material-icons": "npm:angular-material-icons@^0.6.0",
       "angular-materialize": "github:krescruz/angular-materialize@master",
       "angular-messages": "npm:angular-messages@1.4.7",
       "angular-mocks": "npm:angular-mocks@1.4.7",

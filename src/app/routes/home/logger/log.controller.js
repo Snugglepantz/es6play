@@ -1,17 +1,17 @@
 'use strict';
 
 class LogController {
-  constructor(LogService, ToastService) {
+  constructor(LogService) {
     this.logService = LogService;
-    this.toastService = ToastService;
+    //this.toastService = ToastService;
   }
 
   info(info) {
     this.logService.info(info);
-    this.toastService.message(info, 10000);
+    //this.toastService.message(info, 10000);
   }
 }
 
-LogController.$inject = ['LogService', 'ToastService'];
+LogController.$inject = ['LogService'];
 
 export { LogController };

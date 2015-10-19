@@ -4,7 +4,7 @@ import angular from 'angular';
 import 'angular-ui-router';
 
 
-import {coreModule} from '../../../core/core';
+//import {coreModule} from '../../../core/core';
 import template from './home-logger.tpl';
 import { LogService } from './log.service';
 import { LogController } from './log.controller';
@@ -24,8 +24,7 @@ import homeComponent from './logger.component';
 
 export var homeLoggerRouteModule = angular.module('homeLoggerRouteModule', [
   'ui.router',
-  template.name,
-  coreModule.name
+  template.name
 ]).config([
   '$stateProvider',
   function homeLogger($stateProvider) {

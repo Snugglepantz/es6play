@@ -13,7 +13,7 @@ export var homeIndexRouteModule = angular.module('homeIndexRouteModule', [
   function homeRoute($stateProvider) {
     $stateProvider.state('home.index', {
       url: '/',
-      templateUrl: template.name
+      template: '<site-layout></site-layout>'
     });
   }
 ]);
