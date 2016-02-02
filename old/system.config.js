@@ -1,22 +1,20 @@
 System.config({
-  "transpiler": "babel",
-  "babelOptions": {
+  defaultJSExtensions: true,
+  transpiler: "babel",
+  babelOptions: {
     "optional": [
       "runtime"
     ],
     "stage": 1
   },
-  "paths": {
-    "github:*": "../jspm_packages/github/*.js",
-    "npm:*": "../jspm_packages/npm/*.js",
-    "*": "*.js"
+  paths: {
+    "github:*": "../jspm_packages/github/*",
+    "npm:*": "../jspm_packages/npm/*"
   },
-  "buildCSS": true,
-  "separateCSS": false
-});
+  buildCSS: true,
+  separateCSS: false,
 
-System.config({
-  "map": {
+  map: {
     "Dogfalo/materialize": "github:Dogfalo/materialize@0.97.0",
     "angular": "github:angular/bower-angular@1.4.7",
     "angular-animate": "npm:angular-animate@1.4.7",
@@ -113,4 +111,3 @@ System.config({
     }
   }
 });
-

@@ -6,7 +6,7 @@
   "devDependencies": {
     "babel": "^5.2.17",
     "gulp": "^3.8.11",
-    "gulp-helpers": "^1.5.7",
+    "gulp-helpers": "^3.2.3",
     "jspm": "^0.15.6",
     "systemjs-builder": "^0.14.8"
   },
