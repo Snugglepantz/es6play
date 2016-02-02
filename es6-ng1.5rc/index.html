@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" data-framework="angularjs">
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
+    <style>
+
+    </style>
+  </head
+
+  <body layout="column">
+
+<md-container>
+    <div ng-controller="Example1Controller as ex1">
+      <md-list>
+        <md-subheader>Testing</md-subheader>
+        <md-list-item ng-repeat="todo in ex1.todos | limitTo:ex1.itemsPerPage:(ex1.currentPage-1)*ex1.itemsPerPage" class="md-1-line">
+          <div class="md-list-item-text" layout="column">
+            <h3>{{todo.num}}</h3>
+          </div>
+        </md-list-item>
+      </md-list>
+      <pagination current="ex1.currentPage" items="ex1.todos" perPage="ex1.itemsPerPage"></pagination>
+    </div>
+  </md-container>
+
+
+    <script src="jspm_packages/system.js"></script>
+    <script src="config.js"></script>
+
+    <script>
+      System.baseURL = '/';
+      System.import('src/boot').catch(console.error.bind(console));
+    </script>
+  </body>
+</html>
