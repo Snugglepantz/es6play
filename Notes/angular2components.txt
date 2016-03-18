@@ -1,0 +1,77 @@
+Examples
+  <dropdown dropdown-height="200px" dropdown-width="200px"
+   [options]="refData.COUNTRIES"
+     (selection)="onSelection($event)"
+  </dropdown>
+  Property
+    Options
+      we provide
+  Events
+    Output event on change
+Component
+  Consists of
+    Internal HTHML CSS for view
+    Controller class that coordinates the interaction
+
+Properties
+
+<div class='container'>
+    <color-me [sample-color]="'blue'"></color-me>
+</div>
+
+@Component({
+    selector: "color-me",
+    properties: ['color: sampleColor']
+})
+@View({
+    templateUrl: 'color-me.html'
+})
+export class ColorMe {
+}
+
+<div class='color-me'>
+    <h4>Type red, green, yellow, etc.</h4>
+    <input type="text" #input (keyup) [value]="color">
+    <div class='color-panel' [style.background]="input.value"></div>
+</div>
+
+Values that do not change should use Attribute annotation
+Passing a function or command should be avoided
+
+
+Events
+<div class='container'>
+    <h3>Component events example</h3>
+    <scroll-me></scroll-me>
+</div>
+
+<div class='scroll-me' >
+    <button id='scroll-up' class='btn btn-primary scroll-btn'>Up</button>
+    <div class='selection' [scroll-top]="scroll">
+        <div *ng-for="#country of countries;">
+        {{country.description}}
+    </div>
+    </div>
+    <button class='btn btn-primary scroll-btn' (click)="onClick()">Down</button>
+</div>
+
+@Component({
+  selector: "scroll-me"
+})
+@View({
+  templateUrl: 'scroll-me.html',
+  directives: [NgFor]
+})
+class ScrollMe {
+  countries: Array<Object> = new ReferenceData().COUNTRIES;
+  scroll:number = 0;
+
+  constructor() {
+    document.getElementById('scroll-up').addEventListener('click',
+        () => this.scroll -= 30 );
+  }
+
+  onClick() {
+    this.scroll += 30;
+  }
+}

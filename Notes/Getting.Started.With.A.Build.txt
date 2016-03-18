@@ -1,0 +1,65 @@
+Getting Started with a build on Node
+*  Set up project with
+    * npm init(Defaults are ok)
+*  Install Build tools and save them for the project
+    * npm install jspm --save-dev
+*  jspm
+    * jspm init(defaults are fine)
+    * jspm i text css font-awesome angular jquery bootstrap@v4-dev
+*  Create a the initial project Folder structure
+    * project/assets/
+    * project/assets/app.css
+    * project/src/
+    * project/src/components/
+*  Setup App
+    * project/index.html
+        <!DOCTYPE html>
+        <html lang="en" data-framework="angularjs">
+        <head>
+            <meta charset="UTF-8">
+            <title>App</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+        </head>
+
+        <body ng-cloak>
+            <script src="jspm_packages/system.js"></script>
+            <script src="config.js"></script>
+            <script>
+                System.baseURL = '/';
+                System.import('src/boot').catch(console.error.bind(console));
+            </script>
+        </body>
+        </html>
+    * main.js
+        import 'assets/app.css!'
+
+        import angular from 'angular';
+
+
+        /* Components */
+        import test from './components/test/test.component';
+
+        /* */
+
+        let modules = [/* Libraries */].concat([/* Application Modules */]);
+
+        export default angular.module('app', [])
+            .component('test', test)
+            .run();
+    * boot.js
+        import angular from 'angular';
+        import 'font-awesome/css/font-awesome.css!';
+        import main from './main';
+
+        /**
+         * Manually bootstrap the application when AngularJS and
+         * the application classes have been loaded.
+         */
+        angular
+        .element( document )
+        .ready( function() {
+            var body = document.getElementsByTagName("body")[0];
+            angular.bootstrap( body, [ main.name ], { strictDi: false });
+        });
+* You are good to go
+
