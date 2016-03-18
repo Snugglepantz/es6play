@@ -1,0 +1,9 @@
+Changes
+http://blog.ninja-squad.com/2015/07/21/what-is-new-angularjs-1.4/
+Packaged as commonjs
+limitTo takes 2nd argument indicating the beginning index
+ngOptionDisable
+bindToController updated
+  can just use this
+Convert timezones in date filter
+ngMessegaes enhancements
