@@ -12,34 +12,46 @@
 
   <body layout="row" ng-cloak>
 
-    <div flex="10" layout="column">
-      <div flex="20">a</div>
-      <div flex="20">a</div>
-      <div flex="20">c</div>
-    </div>
-  <div flex="90">
-    v
-  </div>
-      <md-sidenav flex="20" layout="column" md-is-locked-open="true" class="md-whiteframe-z1">
-        <md-content>
-          Sidenav
-        </md-content>
-      </md-sidenav>
-    <div flex layout="column">
-      <md-container>
-        <div ng-controller="Example1Controller as ex1">
-          <md-list>
-            <md-subheader>Testing</md-subheader>
-            <md-list-item ng-repeat="todo in ::ex1.todos | limitTo:ex1.itemsPerPage:(ex1.currentPage-1)*ex1.itemsPerPage" class="md-1-line">
-              <div class="md-list-item-text" layout="column">
-                <h3>{{todo.num}}</h3>
-              </div>
-            </md-list-item>
-          </md-list>
-          <pagination current="ex1.currentPage" items="ex1.todos" perPage="ex1.itemsPerPage"></pagination>
+  <div ng-controller="Example1Controller as ex1">
+    <md-list>
+      <md-subheader>Testing</md-subheader>
+      <md-list-item ng-repeat="todo in ::ex1.todos | limitTo:ex1.itemsPerPage:(ex1.currentPage-1)*ex1.itemsPerPage" class="md-1-line">
+        <div class="md-list-item-text" layout="column">
+          <h3>{{todo.num}}</h3>
         </div>
-      </md-container>
-    </div>
+      </md-list-item>
+    </md-list>
+    <pagination current="ex1.currentPage" items="ex1.todos" perPage="ex1.itemsPerPage"></pagination>
+  </div>
+
+    <!--<div flex="10" layout="column">-->
+      <!--<div flex="20">a</div>-->
+      <!--<div flex="20">a</div>-->
+      <!--<div flex="20">c</div>-->
+    <!--</div>-->
+  <!--<div flex="90">-->
+    <!--v-->
+  <!--</div>-->
+      <!--<md-sidenav flex="20" layout="column" md-is-locked-open="true" class="md-whiteframe-z1">-->
+        <!--<md-content>-->
+          <!--Sidenav-->
+        <!--</md-content>-->
+      <!--</md-sidenav>-->
+    <!--<div flex layout="column">-->
+      <!--<md-container>-->
+        <!--<div ng-controller="Example1Controller as ex1">-->
+          <!--<md-list>-->
+            <!--<md-subheader>Testing</md-subheader>-->
+            <!--<md-list-item ng-repeat="todo in ::ex1.todos | limitTo:ex1.itemsPerPage:(ex1.currentPage-1)*ex1.itemsPerPage" class="md-1-line">-->
+              <!--<div class="md-list-item-text" layout="column">-->
+                <!--<h3>{{todo.num}}</h3>-->
+              <!--</div>-->
+            <!--</md-list-item>-->
+          <!--</md-list>-->
+          <!--<pagination current="ex1.currentPage" items="ex1.todos" perPage="ex1.itemsPerPage"></pagination>-->
+        <!--</div>-->
+      <!--</md-container>-->
+    <!--</div>-->
 
 
 
